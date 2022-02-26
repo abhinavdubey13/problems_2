@@ -1,7 +1,66 @@
 package ZZ_tests;
-
 import java.util.*;
 
+
+
+/**
+ * 
+ * implement an N-level cache
+ * 
+ * 
+ * each level has different number of slots , for example
+ * 1st level has 4 slots
+ * 2nd level has 3 slots
+ * 3rd level has 5 slots
+ * 4th level has 10 slots ...
+ * 
+ * 
+ * core functionality expected from cache => getFromCache , setToCache , printCache
+ * 
+ * for simplicity assume key value pairs to be string
+ * 
+ * 
+ * ==============
+ * getFromCache
+ * ==============
+ * =>if found in cache , return the cached value , also set the k-v pair to the 1st level 
+ * =>need to search all levels of cache
+ * 
+ * 
+ * 
+ * 
+ * =============
+ * setToCache
+ * =============
+ * =>this operation fails of all levels are full , else it succeeds
+ * =>this operation sets to the 1st level of cache always
+ * =>if 1st level is fully occupied , use eviction policy to evict an element & move it to the next level
+ * =>if the next level is also full , evict an element from this level & move it the a level further , do this untill an empty slot is found
+ * 
+ *  
+ * 
+ * 
+ * 
+ *  
+ * 
+ * ==============
+ * printCache
+ * ==============
+ * =>prints all levels of cache , with values present 
+ * 
+ * 
+ * 
+ * 
+ * ================
+ * eviction policy
+ * ================
+ * => evict any random k-v pair 
+ * => generalize for various Strategies like LRU , LFU , FIFO
+ * 
+ * 
+ * 
+ * 
+ */
 
 class N_level_cache {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package tree;
+package tree.classic;
 import models.TreeNode;
 
 
@@ -28,19 +28,19 @@ import models.TreeNode;
  */
 
 
-public class p2_tree_using_in_and_pre {
+public class p10_tree_using_in_and_pre {
 
     public static void main(String[] args) {
         int[] in_order = {4, 2, 5, 1, 6, 3};
         int[] pre_order = {1, 2, 4, 5, 3, 6};
 
-        TreeNode root = new p1_tree_using_in_and_post_soln().construct_tree(in_order, pre_order);
+        TreeNode root = new p10_tree_using_in_and_pre_soln().construct_tree(in_order, pre_order);
         root.print_in_order(root);
     }
 }
 
 
-class p2_tree_using_in_and_pre_soln {
+class p10_tree_using_in_and_pre_soln {
 
     int PRE_IDX;
 

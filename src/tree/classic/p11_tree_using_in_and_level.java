@@ -1,5 +1,7 @@
-package tree;
+package tree.classic;
+
 import java.util.*;
+
 import models.TreeNode;
 
 
@@ -15,20 +17,19 @@ import models.TreeNode;
  */
 
 
-
-public class p3_tree_using_in_and_level {
+public class p11_tree_using_in_and_level {
 
     public static void main(String[] args) {
-        int[] in_order = {4, 2, 5, 1, 6, 3};
-        int[] pre_order = {1, 2, 4, 5, 3, 6};
+        List<Integer> in_order = new LinkedList<>(Arrays.asList(4, 2, 5, 1, 6, 3));
+        List<Integer> pre_order = new LinkedList<>(Arrays.asList(1, 2, 4, 5, 3, 6));
 
-        TreeNode root = new p1_tree_using_in_and_post_soln().construct_tree(in_order, pre_order);
+        TreeNode root = new p11_tree_using_in_and_level_soln().function(in_order, pre_order);
         root.print_in_order(root);
     }
 }
 
 
-class p3_tree_using_in_and_level_soln {
+class p11_tree_using_in_and_level_soln {
 
     TreeNode function(List<Integer> level, List<Integer> inorder) {
         int n = inorder.size();

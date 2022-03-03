@@ -1,11 +1,6 @@
-package tree;
+package tree.classic;
 
 import models.TreeNode;
-
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 
 /**
@@ -28,18 +23,18 @@ import java.util.Set;
  */
 
 
-public class p4_tree_using_pre_and_post {
+public class p12_tree_using_pre_and_post {
 
     public static void main(String[] args) {
         int[] pre = {1, 2, 4, 8, 9, 5, 3, 6, 7};
         int[] post = {8, 9, 4, 5, 2, 6, 7, 3, 1};
-        TreeNode root = new p1_tree_using_in_and_post_soln().construct_tree(pre, post);
+        TreeNode root = new p12_tree_using_pre_and_post_soln().construct_tree(pre, post);
         root.print_in_order(root);
     }
 }
 
 
-class p4_tree_using_pre_and_post_soln {
+class p12_tree_using_pre_and_post_soln {
 
     int PRE_IDX;
 

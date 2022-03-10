@@ -12,7 +12,11 @@ import models.SLL;
  * ========
  *
  * i/p : 2-3-7-3-2-12-24
- * o/p : 5 (2-3-7-3-2)
+ * o/p : 5
+ *
+ *
+ * longest palindrome is : (2-3-7-3-2)
+ *
  *
  */
 

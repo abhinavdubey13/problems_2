@@ -20,35 +20,62 @@ public class p2_iterative_inorder {
     }
 }
 
-
-
 class p2_iterative_inorder_soln {
 
-    static void inOrder(TreeNode root){
-        if(root == null){
+    static void inOrder(TreeNode root) {
+        if (root == null) {
             return;
         }
 
         Stack<TreeNode> stk = new Stack<>();
         TreeNode ptr = root;
 
-        while(stk.size() >0 || ptr!=null){
+        while (stk.size() > 0 || ptr != null) {
 
-            while(ptr != null){
+            while (ptr != null) {
                 stk.push(ptr);
-                ptr=ptr.left;
+                ptr = ptr.left;
             }
 
-            if(stk.size() > 0){
-                ptr =stk.pop();
+            if (stk.size() > 0) {
+                ptr = stk.pop();
                 System.out.print(ptr.val + " ");
-                ptr=ptr.right;
+                ptr = ptr.right;
             }
 
         }
 
     }
 
-
 }
 
+// striver : https://www.youtube.com/watch?v=lxTGsVXjwvM&ab_channel=takeUforward
+class p2_iterative_inorder_soln_2 {
+
+    static void inOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stk = new Stack<>();
+        TreeNode ptr = root;
+
+        while (true) {
+
+            if (ptr != null) {
+                stk.push(ptr);
+                ptr = ptr.left;
+            } else {
+                if(stk.size() == 0){
+                    break;
+                }
+                ptr = stk.pop();
+                System.out.println(ptr.val);
+                ptr = ptr.right;
+            }
+
+        }
+
+    }
+
+}

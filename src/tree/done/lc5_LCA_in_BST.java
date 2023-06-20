@@ -1,11 +1,11 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
-
 
 /**
  * leetcode id : 235
  *
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
  *
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST
  *
@@ -28,8 +28,8 @@ import models.TreeNode;
  *
  *
  * else
- *  1. if either of p and q are equal to curr , or
- *  2. p is greater and q is lesser than curr (or vice-versa)
+ * 1. if either of p and q are equal to curr , or
+ * 2. p is greater and q is lesser than curr (or vice-versa)
  *
  * then curr MUST be LCA
  *
@@ -56,7 +56,7 @@ public class lc5_LCA_in_BST {
         // Node p = root.left;
         // Node q = root.right;
 
-        //expected = 2
+        // expected = 2
         TreeNode n1 = root.left;
         TreeNode n2 = root.left.right;
 
@@ -65,7 +65,6 @@ public class lc5_LCA_in_BST {
 
     }
 }
-
 
 class lc5_LCA_in_BST_soln {
 
@@ -80,6 +79,22 @@ class lc5_LCA_in_BST_soln {
             return find(curr.left, n1, n2);
         } else {
             return curr;
+        }
+    }
+}
+
+class lc5_LCA_in_BST_soln_rev1 {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+
+        if (p.val > root.val && q.val > root.val) {
+            return lowestCommonAncestor(root.right, p, q);
+        } else if (p.val < root.val && q.val < root.val) {
+            return lowestCommonAncestor(root.left, p, q);
+        } else {
+            return root;
         }
     }
 }

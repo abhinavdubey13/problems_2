@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 

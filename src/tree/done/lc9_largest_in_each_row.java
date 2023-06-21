@@ -1,9 +1,8 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
 import java.util.*;
-
 
 /**
  *
@@ -38,7 +37,7 @@ import java.util.*;
 public class lc9_largest_in_each_row {
     public static void main(String[] args) {
 
-        //tree
+        // tree
         TreeNode root = new TreeNode(20);
         root.left = new TreeNode(8);
         root.left.left = new TreeNode(4);
@@ -50,6 +49,8 @@ public class lc9_largest_in_each_row {
         root.right.right = new TreeNode(25);
 
         List<Integer> answer = new lc9_largest_in_each_row_soln().find(root);
+        // List<Integer> answer = new lc9_largest_in_each_row_rev1().find(root);
+
         for (Integer i : answer) {
             System.out.print(i + " ");
         }
@@ -58,7 +59,6 @@ public class lc9_largest_in_each_row {
     }
 }
 
-
 class lc9_largest_in_each_row_soln {
 
     List<Integer> ANSWER;
@@ -66,23 +66,22 @@ class lc9_largest_in_each_row_soln {
     List<Integer> find(TreeNode root) {
 
         ANSWER = new LinkedList<>();
-        this.helper(root, 1);
+        this.helper(root, 0);
         return this.ANSWER;
     }
-
 
     private void helper(TreeNode curr, int level) {
         if (curr == null) {
             return;
         }
 
-        if (this.ANSWER.size() < level) {
+        if (this.ANSWER.size() <= level) {
             this.ANSWER.add(curr.val);
         } else {
-            boolean isCurrLarger = this.ANSWER.get(level - 1) < curr.val;
+            boolean isCurrLarger = this.ANSWER.get(level) < curr.val;
             if (isCurrLarger) {
-                this.ANSWER.remove(level - 1);
-                this.ANSWER.add(level - 1, curr.val);
+                this.ANSWER.remove(level);
+                this.ANSWER.add(level, curr.val);
             }
         }
 

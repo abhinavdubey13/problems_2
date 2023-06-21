@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
@@ -6,6 +6,8 @@ import models.TreeNode;
  *
  * leetcode id : 404
  *
+ * https://leetcode.com/problems/sum-of-left-leaves/
+ * 
  * Find the sum of all left leaves in a given binary tree.
  *
  * ==========
@@ -78,6 +80,31 @@ class lc8_sum_of_left_leaves_soln {
 
         helper(curr.left, 'L');
         helper(curr.right, 'R');
+
+    }
+}
+
+
+class lc8_sum_of_left_leaves_soln_rev1 {
+
+    int answer;
+    public int sumOfLeftLeaves(TreeNode root) {
+        answer=0;
+        helper(root, false);
+        return answer;
+    }
+
+    void helper(TreeNode root , boolean isLeft){
+        if(root==null){
+            return;
+        }
+
+        if(root.left==null && root.right==null && isLeft){
+            answer += root.val;
+        }
+
+        helper(root.left, true);
+        helper(root.right, false);
 
     }
 }

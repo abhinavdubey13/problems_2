@@ -1,11 +1,12 @@
-package tree;
-import models.TreeNode;
+package tree.done;
 
+import models.TreeNode;
 
 /**
  *
  * leetcode id : 872
- *
+ * 
+ * https://leetcode.com/problems/leaf-similar-trees/
  *
  * Two binary trees are considered leaf-similar if their leaf value sequence is the same.
  *
@@ -20,13 +21,12 @@ import models.TreeNode;
  *
  */
 
-
 /**
  * ============
  * approach : 1
  * ============
  *
- * convert leaf sequence to string
+ * convert leaf sequence to string using pre-order-traversal
  *
  * then compare 2 strings
  *
@@ -37,10 +37,8 @@ import models.TreeNode;
  *
  */
 
-
 public class lc12_leaf_similar_trees {
 }
-
 
 class lc12_leaf_similar_trees_soln {
 
@@ -50,11 +48,7 @@ class lc12_leaf_similar_trees_soln {
             return true;
         }
 
-        if (r1 == null) {
-            return false;
-        }
-
-        if (r2 == null) {
+        if (r1 == null || r2 == null) {
             return false;
         }
 
@@ -63,7 +57,7 @@ class lc12_leaf_similar_trees_soln {
         dfs(r1, leaf_seq_1);
         dfs(r2, leaf_seq_2);
 
-        //as string buffers equals is not over-ridden
+        // as string buffers equals is not over-ridden
         return leaf_seq_1.toString().equals(leaf_seq_2.toString());
     }
 

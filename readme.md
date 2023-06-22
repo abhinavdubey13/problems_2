@@ -12,5 +12,7 @@
     IdentityFile ~/.ssh/ad13
 
 # TREE :
--  https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+- https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+- https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+
 

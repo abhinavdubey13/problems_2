@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
@@ -8,6 +8,8 @@ import java.util.*;
 /**
  * lc : 958
  *
+ * https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+ * 
  * Given a binary tree, determine if it is a complete binary tree.
  * Definition of a complete binary tree from Wikipedia:
  *
@@ -73,9 +75,17 @@ class lc16_check_complete_binary_tree_soln {
             TreeNode popped = q.poll();
 
             //************ processing-start ****************
+
+            //all nodes must have either 
+            // - both children , or 
+            // - left child , or
+            // - no child
+            // ie. having only right child is NOT allowed
             if (popped.left == null && popped.right != null) {
                 return false;
             }
+
+            // once a non-full is seen , all next must be leaf nodes
             if (non_full_node_seen && !(popped.left == null && popped.right == null)) {
                 return false;
             }

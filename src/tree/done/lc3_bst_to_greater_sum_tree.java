@@ -5,8 +5,12 @@ import models.TreeNode;
 /**
  *
  * leetcode : 1038
- *
  * https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+ * 
+ * 
+ * leetcode id : 538
+ * https://leetcode.com/problems/convert-bst-to-greater-tree/
+ * 
  *
  * Given the root of a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus the sum of all keys greater than the original key in BST.
  *
@@ -26,6 +30,9 @@ import models.TreeNode;
 /**
  *
  * reverse in-order traversal + using recursion
+ * 
+ * 
+ * look at lc3_bst_to_greater_sum_tree_soln_2
  *
  */
 
@@ -87,22 +94,32 @@ class lc3_bst_to_greater_sum_tree_soln {
     }
 }
 
-class lc3_bst_to_greater_sum_tree_rev1 {
 
-    public TreeNode bstToGst(TreeNode root) {
-        helper(root, 0);
+class lc3_bst_to_greater_sum_tree_soln_2 {
+
+    int SUM;
+
+    public TreeNode convertBST(TreeNode root) {
+        if (root == null) {
+            return root;
+        }
+
+        this.SUM = 0;
+        this.helper(root);
         return root;
     }
 
-    int helper(TreeNode root, int add_me) {
-        if (root == null) {
-            return 0;
-        }
-        int curr_val = root.val;
-        int right_sum = helper(root.right, add_me);
-        int left_sum = helper(root.left, add_me + root.val + right_sum);
-        root.val += (add_me + right_sum);
-        return curr_val + left_sum + right_sum;
-    }
 
+    void helper(TreeNode curr) {
+        if (curr == null) {
+            return;
+        }
+
+        helper(curr.right);
+
+        this.SUM += curr.val;
+        curr.val = this.SUM;
+
+        helper(curr.left);
+    }
 }

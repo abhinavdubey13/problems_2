@@ -1,9 +1,11 @@
-package tree;
+package tree.done;
 
 
 /**
  * leetcode id : 938
  *
+ * https://leetcode.com/problems/range-sum-of-bst/
+ * 
  * Given the root node of a binary search tree,
  *
  * return the sum of values of all nodes with a value in the range [low, high].
@@ -64,11 +66,16 @@ class lc20_range_sum_BST_soln {
         }
 
         if (curr.val < low) {
+
+            //only go right
             helper(curr.right, low, high);
         } else if (curr.val > high) {
+
+            //only go left
             helper(curr.left, low, high);
         } else {
-            //curr in range
+
+            //curr in range , go in both directions
             this.ANSWER += curr.val;
             helper(curr.left, low, high);
             helper(curr.right, low, high);

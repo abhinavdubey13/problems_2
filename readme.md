@@ -14,5 +14,11 @@
 # TREE :
 - https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
 - https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+- https://leetcode.com/problems/smallest-string-starting-from-leaf/
+- https://leetcode.com/problems/binary-tree-coloring-game/
+- https://leetcode.com/problems/increasing-order-search-tree/
+- https://leetcode.com/problems/path-sum-iii/description/
+
+
 
 

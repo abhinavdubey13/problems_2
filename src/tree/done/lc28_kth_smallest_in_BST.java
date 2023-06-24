@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
@@ -15,6 +15,7 @@ import java.util.*;
  * https://leetcode.com/problems/kth-smallest-element-in-a-bst/
  *
  *
+ * 
  *
  */
 
@@ -60,11 +61,14 @@ class lc28_kth_smallest_in_BST_soln {
             }
 
             itr = stk.pop();
-            k--;
 
+            //process begin
+            k--;
             if (k == 0) {
                 ans = itr.val;
             }
+            //process ends
+
             itr = itr.right;
         }
 

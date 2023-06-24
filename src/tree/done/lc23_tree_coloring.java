@@ -1,8 +1,10 @@
-package tree;
+package tree.done;
 
 /**
  * leetcode id : 1145
  *
+ * https://leetcode.com/problems/binary-tree-coloring-game/
+ * 
  * Two players play a turn based game on a binary tree.
  * We are given the root of this binary tree, and the number of nodes n in the tree.
  *
@@ -44,6 +46,8 @@ import models.TreeNode;
  * And this is also all he can take, since he cannot cross the node of the first player.
  *
  *
+ * https://leetcode.com/problems/binary-tree-coloring-game/solutions/350738/easy-to-understand-for-everyone/
+ * 
  * =============
  * TC = O(n)
  * SC = O(ht)

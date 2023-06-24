@@ -1,10 +1,12 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
 /**
  *
  * lc : 988
+ * 
+ * https://leetcode.com/problems/smallest-string-starting-from-leaf/
  *
  * Given the root of a binary tree,
  *
@@ -23,6 +25,10 @@ import models.TreeNode;
 /**
  *
  * top-down recursion
+ * 
+ * -form string from root to leaf
+ * -reverse the string
+ * -compare with global answer
  *
  */
 
@@ -110,27 +116,29 @@ class lc18_smallest_string_soln {
 
 
     private void check(String str) {
-        String s = new StringBuilder(str).reverse().toString();
+
+        //reverse b4 comparing
+        String reversed = new StringBuilder(str).reverse().toString();
 
         if (this.ANSWER.equals("")) {
-            this.ANSWER = s;
+            this.ANSWER = reversed;
             return;
         }
 
-        for (int i = 0, j = 0; i < ANSWER.length() && j < s.length(); i++, j++) {
-            if (s.charAt(j) < ANSWER.charAt(i)) {
-                this.ANSWER = s;
+        for (int i = 0, j = 0; i < ANSWER.length() && j < reversed.length(); i++, j++) {
+            if (reversed.charAt(j) < ANSWER.charAt(i)) {
+                this.ANSWER = reversed;
                 return;
-            } else if (s.charAt(j) == ANSWER.charAt(i)) {
+            } else if (reversed.charAt(j) == ANSWER.charAt(i)) {
                 continue;
-            } else if (s.charAt(j) > ANSWER.charAt(i)) {
+            } else if (reversed.charAt(j) > ANSWER.charAt(i)) {
                 return;
             }
         }
 
 
-        if (s.length() < this.ANSWER.length()) {
-            this.ANSWER = s;
+        if (reversed.length() < this.ANSWER.length()) {
+            this.ANSWER = reversed;
         }
     }
 }

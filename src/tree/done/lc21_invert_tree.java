@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
@@ -6,6 +6,8 @@ import models.TreeNode;
  *
  * leetcode id : 226
  *
+ * https://leetcode.com/problems/invert-binary-tree/description/
+ * 
  * Invert a binary tree.
  *
  *
@@ -18,23 +20,16 @@ import models.TreeNode;
  *
  */
 
-
-
-
-
-
-
-
 /**
  * ============
  * approach : 1
  * ============
  *
+ * 
  * start inverting from the last level , and move upwards
  *
- * head-recursion
+ * post order traversal
  *
- * ie. we need to use post order traversal to do this
  *
  * ============
  * TC = O(n)
@@ -43,7 +38,6 @@ import models.TreeNode;
  *
  */
 
-
 public class lc21_invert_tree {
 }
 
@@ -51,14 +45,13 @@ public class lc21_invert_tree {
 class lc21_invert_tree_soln {
 
     public TreeNode invert(TreeNode root) {
-        if(root==null || root.left==null && root.right==null){
+        if (root == null || root.left == null && root.right == null) {
             return root;
         }
 
         this.helper(root);
         return root;
     }
-
 
     private void helper(TreeNode curr) {
         if (curr == null) {

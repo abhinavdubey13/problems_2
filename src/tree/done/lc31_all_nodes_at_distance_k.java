@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
@@ -8,6 +8,8 @@ import java.util.*;
 /**
  *
  * lc : 863
+ * 
+ * https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
  *
  * We are given a binary tree (with root node root), a target node, and an integer value K
  *
@@ -76,13 +78,10 @@ class lc31_all_nodes_at_distance_k_soln {
     List<Integer> ANSWER;
 
     public List<Integer> find(TreeNode root, TreeNode target, int k) {
-
         distMap = new HashMap<>();
         ANSWER = new LinkedList<>();
-
         this.setDistanceMap(root, target);
         helper(root, distMap.get(root), k);
-
         return this.ANSWER;
     }
 
@@ -93,15 +92,11 @@ class lc31_all_nodes_at_distance_k_soln {
         }
 
         int final_dist_from_target = distMap.getOrDefault(curr, dist_from_target);
-
         if (final_dist_from_target == k) {
             this.ANSWER.add(curr.val);
         }
-
         helper(curr.left, final_dist_from_target + 1, k);
         helper(curr.right, final_dist_from_target + 1, k);
-
-
     }
 
     int setDistanceMap(TreeNode curr, TreeNode target) {
@@ -124,11 +119,8 @@ class lc31_all_nodes_at_distance_k_soln {
             this.distMap.put(curr, 1 + r);
             return 1 + r;
         }
-
-
         return -1;
-
-
     }
+
 
 }

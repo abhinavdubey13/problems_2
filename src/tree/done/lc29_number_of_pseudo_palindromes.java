@@ -1,21 +1,18 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
 /**
  *
  * lc: 1457
+ * 
+ * https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
  *
  * Given a binary tree where node values are digits from 1 to 9.
  *
  * Return the number of pseudo-palindromic paths going from the root node to leaf nodes.
  *
- *
  * A path in the binary tree is said to be pseudo-palindromic if at least one permutation of the node values in the path is a palindrome.
- *
- *
- *
- *
  *
  *
  */
@@ -85,6 +82,8 @@ class lc29_number_of_pseudo_palindromes_soln {
         }
 
         this.ARR[curr.val]++;
+
+        //if leaf , check for palindrome
         if (curr.left == null && curr.right == null) {
             this.check_palin();
         } else {
@@ -103,7 +102,6 @@ class lc29_number_of_pseudo_palindromes_soln {
         for (int i : this.ARR) {
             count_odd += (i % 2 == 1) ? 1 : 0;
         }
-
         this.ANSWER += (count_odd < 2) ? 1 : 0;
     }
 

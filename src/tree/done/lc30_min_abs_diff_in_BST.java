@@ -1,10 +1,12 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
 /**
  *
  * leetcode id : 530
+ * 
+ * https://leetcode.com/problems/minimum-absolute-difference-in-bst/
  *
  * Given a binary search tree with non-negative values,
  *

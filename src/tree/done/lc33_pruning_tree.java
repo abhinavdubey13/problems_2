@@ -1,4 +1,4 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
@@ -6,6 +6,8 @@ import models.TreeNode;
 /**
  *
  * lc : 814
+ * 
+ * https://leetcode.com/problems/binary-tree-pruning/
  *
  * We are given the head node root of a binary tree,
  *

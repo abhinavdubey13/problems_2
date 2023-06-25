@@ -1,12 +1,12 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
-
 
 /**
  *
  * leetcode id : 617
  *
+ * https://leetcode.com/problems/merge-two-binary-trees/
  *
  * Given two binary trees and imagine that when you put one of them to cover the other,
  * some nodes of the two trees are overlapped while the others are not.
@@ -39,16 +39,12 @@ import models.TreeNode;
  *
  */
 
-
 public class lc34_merge_tree_by_overlapping {
 }
 
-
-
 class lc34_merge_tree_by_overlapping_soln {
 
-    TreeNode function(TreeNode r1, TreeNode r2) {
-
+ TreeNode function(TreeNode r1, TreeNode r2) {
         if (r1 == null) {
             return r2;
         }
@@ -57,10 +53,10 @@ class lc34_merge_tree_by_overlapping_soln {
             return r1;
         }
 
-        //make new node
-        TreeNode root = new TreeNode(r1.val + r2.val);
-        root.left = function(r1.left, r2.left);
-        root.right = function(r1.right, r2.right);
-        return root;
+        r1.val += r2.val;
+        r1.left = function(r1.left, r2.left);
+        r1.right = function(r1.right, r2.right);
+        return r1;
     }
 }
+

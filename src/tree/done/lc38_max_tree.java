@@ -1,7 +1,6 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
-
 
 /**
  *
@@ -35,7 +34,8 @@ import models.TreeNode;
  * =============
  * recursive
  *
- * maintain low and high at each function call , to be able to know the range in the input array to search for Largest number
+ * maintain low and high at each function call , to be able to know the range in
+ * the input array to search for Largest number
  *
  *
  *
@@ -46,11 +46,8 @@ import models.TreeNode;
  *
  */
 
-
 public class lc38_max_tree {
 }
-
-
 
 class lc38_max_tree_soln {
 
@@ -99,4 +96,49 @@ class lc38_max_tree_soln {
         return answer;
     }
 
+}
+
+class lc38_max_tree_rev1 {
+
+    public TreeNode constructMaximumBinaryTree(int[] arr) {
+        int len = arr.length;
+        return helper(arr, len, 0, len - 1);
+    }
+
+    TreeNode helper(int[] arr, int len, int i, int j) {
+        if (i < 0 || j >= len || i > j) {
+            return null;
+        }
+
+        if (i == j) {
+            return new TreeNode(arr[i]);
+        }
+
+        int mx_idx = max_val_idx(arr, len, i, j);
+        if (mx_idx < 0 || mx_idx >= len) {
+            return null;
+        }
+
+        TreeNode curr = new TreeNode(arr[mx_idx]);
+        curr.left = helper(arr, len, i, mx_idx - 1);
+        curr.right = helper(arr, len, mx_idx + 1, j);
+        return curr;
+
+    }
+
+    int max_val_idx(int[] arr, int len, int i, int j) {
+        if (i < 0 || j >= len || i > j) {
+            return -1;
+        }
+        if (i == j) {
+            return i;
+        }
+        int ans = i;
+        for (int k = i; k <= j; k++) {
+            if (arr[k] > arr[ans]) {
+                ans = k;
+            }
+        }
+        return ans;
+    }
 }

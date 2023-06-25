@@ -1,10 +1,12 @@
-package tree;
+package tree.done;
 
 import models.TreeNode;
 
 /**
  * leetcode id : 450
  *
+ * 
+ * https://leetcode.com/problems/delete-node-in-a-bst/
  *
  * Given a root node reference of a BST and a key, delete the node with the given key in the BST.
  *
@@ -47,7 +49,7 @@ import models.TreeNode;
  *
  */
 
-public class lc35_delete_node_in_BST {
+public class lc35_delete_a_given_node_in_BST {
 }
 
 

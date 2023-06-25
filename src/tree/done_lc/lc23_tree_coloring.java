@@ -1,4 +1,4 @@
-package tree.done;
+package tree.done_lc;
 
 /**
  * leetcode id : 1145

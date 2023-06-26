@@ -4,7 +4,6 @@ import java.util.*;
 
 import models.*;
 
-
 /**
  *
  * iterative pre order traversal
@@ -24,37 +23,37 @@ public class p1_iterative_pre_order {
         root.right.right.right = new TreeNode(7);
 
         p1_iterative_pre_order_soln.preOrder(root);
+        
+
     }
 }
 
-
 class p1_iterative_pre_order_soln {
 
-    static void preOrder(TreeNode root){
-        if(root == null){
+    static void preOrder(TreeNode root) {
+        if (root == null) {
             return;
         }
 
         Stack<TreeNode> stk = new Stack<>();
         TreeNode ptr = root;
 
-        while(stk.size() >0 || ptr!=null){
+        while (stk.size() > 0 || ptr != null) {
 
-            while(ptr != null){
+            while (ptr != null) {
                 System.out.print(ptr.val + " ");
                 stk.push(ptr);
-                ptr=ptr.left;
+                ptr = ptr.left;
             }
 
-
-            if(stk.size() > 0){
-                ptr =stk.pop();
-                ptr=ptr.right;
+            if (stk.size() > 0) {
+                ptr = stk.pop();
+                ptr = ptr.right;
             }
 
         }
 
     }
 
-
 }
+

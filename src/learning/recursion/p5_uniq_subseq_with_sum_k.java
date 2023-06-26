@@ -1,4 +1,4 @@
-package POC.recursion;
+package learning.recursion;
 import  java.util.*;
 
 /**

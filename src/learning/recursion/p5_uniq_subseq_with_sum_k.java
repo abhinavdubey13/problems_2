@@ -3,6 +3,10 @@ import  java.util.*;
 
 /**
  *
+ * lc : 40
+ * 
+ * https://leetcode.com/problems/combination-sum-ii/
+ * 
  * given an array (with duplicates) , print all sub-seq with sum as k ,
  * an element can be picked atmost once
  *

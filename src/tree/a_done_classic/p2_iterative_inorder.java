@@ -1,36 +1,28 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
-import java.util.*;
+import models.TreeNode;
 
-import models.*;
+import java.util.Stack;
 
-/**
- *
- * iterative pre order traversal
- *
- */
-
-public class p1_iterative_pre_order {
+public class p2_iterative_inorder {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
+        // root.left.left = new TreeNode(4);
+        // root.left.right = new TreeNode(5);
 
         root.right = new TreeNode(3);
-        root.right.right = new TreeNode(6);
-        root.right.right.right = new TreeNode(7);
+        // root.right.right = new TreeNode(6);
+        // root.right.right.right = new TreeNode(7);
 
-        p1_iterative_pre_order_soln.preOrder(root);
-        
-
+        p2_iterative_inorder_soln.inOrder(root);
     }
 }
 
-class p1_iterative_pre_order_soln {
+class p2_iterative_inorder_soln {
 
-    static void preOrder(TreeNode root) {
+    static void inOrder(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -41,13 +33,13 @@ class p1_iterative_pre_order_soln {
         while (stk.size() > 0 || ptr != null) {
 
             while (ptr != null) {
-                System.out.print(ptr.val + " ");
                 stk.push(ptr);
                 ptr = ptr.left;
             }
 
             if (stk.size() > 0) {
                 ptr = stk.pop();
+                System.out.print(ptr.val + " ");
                 ptr = ptr.right;
             }
 
@@ -56,4 +48,3 @@ class p1_iterative_pre_order_soln {
     }
 
 }
-

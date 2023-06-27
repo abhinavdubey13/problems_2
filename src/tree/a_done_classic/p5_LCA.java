@@ -1,10 +1,12 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 import models.TreeNode;
 
 /**
  *
  * lc : 236
+ * 
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
  *
  * Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
  *
@@ -18,14 +20,13 @@ import models.TreeNode;
  *
  * using recursion
  *
- *  TC = O(n)
- *  SC = O(n)
+ * TC = O(n)
+ * SC = O(n)
  *
  */
 
 public class p5_LCA {
 }
-
 
 class p5_LCA_soln {
 
@@ -34,9 +35,8 @@ class p5_LCA_soln {
             return null;
         }
 
-        return helper(root,n1,n2);
+        return helper(root, n1, n2);
     }
-
 
     TreeNode helper(TreeNode curr, TreeNode n1, TreeNode n2) {
 
@@ -51,10 +51,8 @@ class p5_LCA_soln {
             return curr;
         } else if (l != null) {
             return l;
-        } else if (r != null) {
-            return r;
         } else {
-            return null;
+            return r;
         }
 
     }

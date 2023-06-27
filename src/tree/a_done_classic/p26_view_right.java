@@ -1,4 +1,4 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 import models.TreeNode;
 
@@ -9,6 +9,8 @@ import java.util.*;
  * lc:199
  *
  *
+ * https://leetcode.com/problems/binary-tree-right-side-view/
+ * 
  * Given the root of a binary tree, imagine yourself standing on the right side of it,
  * return the values of the nodes you can see ordered from top to bottom.
  *
@@ -18,6 +20,8 @@ import java.util.*;
 
 /**
  *
+ * 
+ * goto right first , instead of left
  * similar to left view , DFS
  *
  */

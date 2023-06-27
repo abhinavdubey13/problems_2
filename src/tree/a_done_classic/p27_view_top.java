@@ -1,5 +1,4 @@
-package tree.classic_2;
-
+package tree.a_done_classic;
 
 import models.TreeNode;
 
@@ -7,10 +6,11 @@ import java.util.*;
 
 /**
  * given a binary tree , print its top order
- * <p>
+ *
+ * 
  * https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/?ref=lbp
+ * 
  */
-
 
 /**
  *
@@ -28,12 +28,9 @@ import java.util.*;
  *
  */
 
-
 public class p27_view_top {
 
-
     public static void main(String[] args) {
-
 
         // expected : 2 1 3 6
         TreeNode root = new TreeNode(1);
@@ -43,13 +40,12 @@ public class p27_view_top {
         root.left.right.right = new TreeNode(5);
         root.left.right.right.right = new TreeNode(6);
 
-
         new p27_view_top_soln().print_vertical(root);
         System.out.println();
     }
 
-
 }
+
 
 
 class p27_view_top_soln {
@@ -61,7 +57,7 @@ class p27_view_top_soln {
         hmap = new TreeMap<>();
         get_map(root, 0);
 
-        //printing logic
+        // printing logic
         for (Map.Entry<Integer, List<Integer>> entry : hmap.entrySet()) {
             List<Integer> nodes_at_a_vertical_level = entry.getValue();
             System.out.print(nodes_at_a_vertical_level.get(0) + " ");
@@ -69,7 +65,6 @@ class p27_view_top_soln {
 
         System.out.println();
     }
-
 
     private void get_map(TreeNode curr, int level) {
         if (curr == null) {
@@ -83,6 +78,5 @@ class p27_view_top_soln {
         get_map(curr.left, level - 1);
         get_map(curr.right, level + 1);
     }
-
 
 }

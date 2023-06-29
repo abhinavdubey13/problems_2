@@ -1,4 +1,4 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 import models.TreeNode;
 
@@ -56,14 +56,9 @@ class p17_check_edge_divide_soln {
         if (root == null) {
             return false;
         }
-
         hset = new HashSet<>();
-
         int total_size = helper(root);
-
         return (total_size % 2 == 0 && hset.contains(total_size / 2));
-
-
     }
 
 

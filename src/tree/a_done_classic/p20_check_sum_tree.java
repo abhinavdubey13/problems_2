@@ -1,13 +1,12 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 /**
  * check if the given Binary Tree is SumTree .
- * <p>
+ *
  * A SumTree is a Binary Tree where the value of a node is equal to sum of the nodes present in its left subtree and right subtree.
- * <p>
  * An empty tree is SumTree and sum of an empty tree can be considered as 0.
- * <p>
  * A leaf node is also considered as SumTree.
+ * 
  */
 
 import models.TreeNode;

@@ -1,4 +1,4 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 
 //Two trees are identical when they have same data and arrangement of data is also same.

@@ -1,4 +1,4 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 import models.TreeNode;
 

@@ -1,9 +1,18 @@
-package tree.classic_2;
+package tree.a_done_classic;
 
 import models.TreeNode;
 
 import java.util.*;
 
+
+/**
+ * 
+ * lc : 103
+ * 
+ * https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+ * 
+ * 
+ */
 
 /**
  *
@@ -84,37 +93,31 @@ class p8_level_order_spiral_using_stk {
 
 
 class p8_level_order_spiral_using_recursion {
+    List<List<Integer>> ans;
 
-    static void function(TreeNode root) {
-        List<List<Integer>> sol = new ArrayList<>();
-        for(List<Integer> level : sol){
-            for(Integer i : level){
-                System.out.print(i + " ");
-            }
-        }
+    List<List<Integer>> function(TreeNode root) {
+        ans = new LinkedList<>();
+        helper(root, 0);
+        return ans;
     }
 
-    static void dfs(TreeNode curr, List<List<Integer>> sol, int level) {
-        if (curr == null)
+    void helper(TreeNode root , int level){
+        if(root == null){
             return;
-
-        //add new list
-        if (sol.size() <= level) {
-            List<Integer> newLevel = new LinkedList<>();
-            sol.add(newLevel);
         }
 
-        //in current level
-        List<Integer> level_list = sol.get(level);
+        if(ans.size() < level+1){
+            ans.add(new LinkedList<>());
+        }
 
-        //add at beginning or end
-        if (level % 2 == 0)
-            level_list.add(curr.val);
-        else
-            level_list.add(0, curr.val);
+        if(level%2==0){
+            ans.get(level).add(root.val);
+        }else{
+            ans.get(level).add(0,root.val);
+        }
 
-        dfs(curr.left, sol, level + 1);
-        dfs(curr.right, sol, level + 1);
+        helper(root.left , level+1);
+        helper(root.right , level+1);
     }
 
 

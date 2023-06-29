@@ -1,4 +1,4 @@
 Host github.com
-HostName github.com
-User abhinavdubey13
-IdentityFile ~/.ssh/ad13
+    HostName github.com
+    User abhinavdubey13
+    IdentityFile ~/.ssh/ad13
